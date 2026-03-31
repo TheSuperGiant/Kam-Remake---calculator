@@ -1,8 +1,7 @@
----
-title: Kam Remake - calculator - English
----
-
-{% include header.html %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.css" />
 	<script src="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/hyperformula/dist/hyperformula.full.min.js"></script>
@@ -21,7 +20,7 @@ title: Kam Remake - calculator - English
 
 		const hot = new Handsontable(document.getElementById('sheet'), {
 			data: [
-				[,'amount', 'Swine Farms','Mills', 'corn',''],
+				[,'amount', 'swine farms','mills', 'corn',''],
 				['Butcher',, '=B2*3',, '=ROUNDUP(B2*4.8, 0)'],
 				['Baker',,, '=B3*1', '=B3*1'],
 				['Stables',,,, '=B4*2'],
@@ -30,8 +29,8 @@ title: Kam Remake - calculator - English
 				[,'amount','Wood Cutter'],
 				['Sawmill',,'=B8*2', ],
 				[],
-				[,'amount','Swine Farms'],
-				['Tanery',,'=B11*3', ],
+				[,'amount','swine farms'],
+				['tanery',,'=B11*3', ],
 				[],
 				[,'building 1','building 2','building 3',,'total recruitments'],
 				['statics building',,,,,'=SUM(B14:D14)' ],
@@ -42,25 +41,8 @@ title: Kam Remake - calculator - English
 			formulas: {
 				engine: hf
 			},
-			licenseKey: 'non-commercial-and-evaluation',
-
-		cells(row, col) {
-			const p = {};
-
-			if (col === 0) p.readOnly = true;
-			if (col === 4) p.readOnly = true;
-			if (col === 5) p.readOnly = true;
-			if (row === 0) p.readOnly = true;
-			if (row === 6) p.readOnly = true;
-			if (row === 7) p.readOnly = true;
-			if (row === 9) p.readOnly = true;
-			if (row === 10) p.readOnly = true;
-			if (row === 12) p.readOnly = true;
-			if (row === 13) p.readOnly = true;
-
-			return p;
-		}
-	});
+			licenseKey: 'non-commercial-and-evaluation'
+		});
 	</script>
 </body>
 </html>
