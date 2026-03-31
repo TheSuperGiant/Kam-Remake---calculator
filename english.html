@@ -1,0 +1,49 @@
+---
+title: Kam Remake - calculator - English
+---
+
+{% include header.html %}
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.css" />
+	<script src="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/hyperformula/dist/hyperformula.full.min.js"></script>
+	<style>
+		html, body { height:100%; margin:0; }
+		#sheet { height:100%; }
+	</style>
+</head>
+<body>
+	<div id="sheet"></div>
+
+	<script>
+		const hf = HyperFormula.buildEmpty({
+			licenseKey: 'gpl-v3'
+		});
+
+		const hot = new Handsontable(document.getElementById('sheet'), {
+			data: [
+				[,'amount', 'swine farms','mills', 'corn',''],
+				['Butcher',, '=B2*3',, '=ROUNDUP(B2*4.8, 0)'],
+				['Baker',,, '=B3*1', '=B3*1'],
+				['Stables',,,, '=B4*2'],
+				['total corn','','','','', '=SUM(E2:E4)'],
+				[],
+				[,'amount','Wood Cutter'],
+				['Sawmill',,'=B8*2', ],
+				[],
+				[,'amount','swine farms'],
+				['tanery',,'=B11*3', ],
+				[],
+				[,'building 1','building 2','building 3',,'total recruitments'],
+				['statics building',,,,,'=SUM(B14:D14)' ],
+			],
+			rowHeaders: true,
+			colHeaders: true,
+			contextMenu: true,
+			formulas: {
+				engine: hf
+			},
+			licenseKey: 'non-commercial-and-evaluation'
+		});
+	</script>
+</body>
+</html>
