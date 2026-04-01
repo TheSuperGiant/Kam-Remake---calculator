@@ -1,5 +1,7 @@
 {% assign file_name = page.name | split: "." | first %}
 {% assign Butcher = file_name | append: "/Butcher.html" %}
+{% assign Baker = file_name | append: "/Baker.html" %}
+{% assign Stables = file_name | append: "/Stables.html" %}
 <title>{{ title }} - {{ file_name }}</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.css" />
 	<script src="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.js"></script>
@@ -20,7 +22,7 @@
 		const hot = new Handsontable(document.getElementById('sheet'), {
 			data: [
 				{% include {{ Butcher | replace: '', '' }} %},, '=B2*3',, '=ROUNDUP(B2*4.8, 0)'],
-				['Baker',,, '=B3*1', '=B3*1'],
+				[{% include {{ Baker | replace: '', '' }} %},,, '=B3*1', '=B3*1'],
 				['Stables',,,, '=B4*2'],
 				['total corn','','','','', '=SUM(E2:E4)'],
 				[],
