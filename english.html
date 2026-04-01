@@ -1,5 +1,6 @@
 ---
-title: Kam Remake - calculator - English
+page_name: {{ page.name | split: "." | first }}
+title: Kam Remake - calculator - {{ page_name.title }}
 ---
 {{ page.name | split: "." | first }}
 {% include header.html %}
