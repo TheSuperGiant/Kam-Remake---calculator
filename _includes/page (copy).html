@@ -19,7 +19,7 @@
 
 		const hot = new Handsontable(document.getElementById('sheet'), {
 			data: [
-				{% include {{ Butcher | replace: '', '' }} %},, '=B2*3',, '=ROUNDUP(B2*4.8, 0)'],
+				{% include English/Butcher.html  %},, '=B2*3',, '=ROUNDUP(B2*4.8, 0)'],
 				['Baker',,, '=B3*1', '=B3*1'],
 				['Stables',,,, '=B4*2'],
 				['total corn','','','','', '=SUM(E2:E4)'],
