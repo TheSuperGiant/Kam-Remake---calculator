@@ -17,8 +17,7 @@
 
 		const hot = new Handsontable(document.getElementById('sheet'), {
 			data: [
-				[,'amount', 'Swine Farms','Mills', 'corn',''],
-				['Butcher',, '=B2*3',, '=ROUNDUP(B2*4.8, 0)'],
+				{% include {{ file_name }}/Butcher.html %},, '=B2*3',, '=ROUNDUP(B2*4.8, 0)'],
 				['Baker',,, '=B3*1', '=B3*1'],
 				['Stables',,,, '=B4*2'],
 				['total corn','','','','', '=SUM(E2:E4)'],
