@@ -2,6 +2,10 @@
 {% assign Butcher = file_name | append: "/Butcher.html" %}
 {% assign Baker = file_name | append: "/Baker.html" %}
 {% assign Stables = file_name | append: "/Stables.html" %}
+{% assign total_corn = file_name | append: "/total-corn.html" %}
+{% assign total_corn = file_name | append: "/Sawmill.html" %}
+{% assign total_corn = file_name | append: "/Tanery.html" %}
+{% assign total_corn = file_name | append: "/building.html" %}
 <title>{{ title }} - {{ file_name }}</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.css" />
 	<script src="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.js"></script>
@@ -23,17 +27,14 @@
 			data: [
 				{% include {{ Butcher | replace: '', '' }} %},, '=B2*3',, '=ROUNDUP(B2*4.8, 0)'],
 				[{% include {{ Baker | replace: '', '' }} %},,, '=B3*1', '=B3*1'],
-				['Stables',,,, '=B4*2'],
-				['total corn','','','','', '=SUM(E2:E4)'],
+				[{% include {{ Stables | replace: '', '' }} %},,,, '=B4*2'],
+				[{% include {{ total_corn | replace: '', '' }} %},'','','','', '=SUM(E2:E4)'],
 				[],
-				[,'amount','Wood Cutter'],
-				['Sawmill',,'=B8*2', ],
+				{% include {{ Sawmill | replace: '', '' }} %},,'=B8*2', ],
 				[],
-				[,'amount','Swine Farms'],
-				['Tanery',,'=B11*3', ],
+				{% include {{ Tanery | replace: '', '' }} %},,'=B11*3', ],
 				[],
-				[,'building 1','building 2','building 3',,'total recruitments'],
-				['statics building',,,,,'=SUM(B14:D14)' ],
+				{% include {{ building | replace: '', '' }} %},,,,,'=SUM(B14:D14)' ],
 			],
 			rowHeaders: true,
 			colHeaders: true,
