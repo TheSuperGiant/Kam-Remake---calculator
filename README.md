@@ -4,7 +4,14 @@ This is a calculator for buildings, so you can easily see how many buildings you
 ---
 
 ## 🌍 Adding a New Language
-We welcome translations from the community.
-1.	add your laungage to the index file
-2.	copy file English.html and rename it to your laungage.
-3.	in folder _includes copy folder English and rename all the English text in the files don't rename the files.
+
+We welcome contributions! To add a new language:
+
+1. Add your language to the **index file**.
+2. Copy `English.html` and rename it using your language code or name.
+3. In the `_includes` folder:
+	- Copy the `English` folder.
+	- Keep the file names the same.
+	- Replace only the English text inside the files with your translations.
+
+Once done, test your changes and submit a Pull Request.
