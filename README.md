@@ -1,5 +1,5 @@
 # Kam-Remake---calculator
-This is a calculator for buildings, so you can easily see how many buildings you need, for example corn fields, based on bakeries and butcheries. It also calculates how many recruitments you need for each building category. You can fill it in live in this sheet.
+This calculator helps you see how many buildings you need—such as farms—based on bakeries and butcheries. It also shows how many units are required for each building type. You can fill it in live on this sheet.
 
 ---
 
