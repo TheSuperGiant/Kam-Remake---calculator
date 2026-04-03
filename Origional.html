@@ -41,8 +41,38 @@
 			formulas: {
 				engine: hf
 			},
-			licenseKey: 'non-commercial-and-evaluation'
-		});
+			licenseKey: 'non-commercial-and-evaluation',
+		cells(row, col) {
+			const p = {};
+
+			if (col === 0) p.readOnly = true;
+			if (col === 2 && row >= 0 && row < 13) p.readOnly = true;
+			if (col === 3 && row >= 0 && row < 13) p.readOnly = true;
+			if (col === 4) p.readOnly = true;
+			if (col === 5) p.readOnly = true;
+			if (row === 0) p.readOnly = true;
+			if (row === 4) p.readOnly = true;
+			if (row === 5) p.readOnly = true;
+			if (row === 6) p.readOnly = true;
+			if (row === 8) p.readOnly = true;
+			if (row === 9) p.readOnly = true;
+			if (row === 11) p.readOnly = true;
+			if (row === 12) p.readOnly = true;
+			return p;
+		},
+		beforeKeyDown(e) {
+			if (e.ctrlKey || e.metaKey) return;
+
+			const allowed =
+				(e.key >= '0' && e.key <= '9') ||
+				['Backspace','Delete','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Tab','Enter','F5'].includes(e.key);
+
+			if (!allowed) {
+				e.stopImmediatePropagation();
+				e.preventDefault();
+			}
+		}
+	});
 	</script>
 </body>
 </html>

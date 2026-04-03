@@ -62,6 +62,18 @@
 			if (row === 12) p.readOnly = true;
 
 			return p;
+		},
+		beforeKeyDown(e) {
+			if (e.ctrlKey || e.metaKey) return;
+
+			const allowed =
+				(e.key >= '0' && e.key <= '9') ||
+				['Backspace','Delete','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Tab','Enter','F5'].includes(e.key);
+
+			if (!allowed) {
+				e.stopImmediatePropagation();
+				e.preventDefault();
+			}
 		}
 	});
 	</script>
